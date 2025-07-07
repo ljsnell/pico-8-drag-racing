@@ -12,8 +12,8 @@ end
 
 function _update()
   if (btnp(5)) then
-    line_x0-=2
-    line_y0+=2
+    line_x0-=10
+    line_y0+=10
   end
 
   if (line_x0>115 or line_x0<90) then
