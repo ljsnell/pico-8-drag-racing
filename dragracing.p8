@@ -12,7 +12,7 @@ end
  
 function _update()
   if (btnp(5)) then
-    line_y0+=15
+    line_x0-=15
   end
 
   if (line_x0>115 or line_x0<90) then
@@ -21,7 +21,7 @@ function _update()
     accuracy -= 100
   else
   	line_x0+=.25
-  	line_y0-=.75
+  	line_y0-=.25
   end
 end
 
