@@ -9,16 +9,17 @@ function _init()
 
   accuracy = 1000
 end
- 
+
 function _update()
   if (btnp(5)) then
-    line_x0-=15
+    line_x0-=2
+    line_y0+=2
   end
 
   if (line_x0>115 or line_x0<90) then
-  	line_x0=90
+  	line_x0=100
   	line_y0=115
-    accuracy -= 100
+    accuracy-=100
   else
   	line_x0+=.25
   	line_y0-=.25
