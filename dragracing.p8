@@ -2,35 +2,33 @@ pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
 function _init()
-  -- always start on white
-  col = 7
   line_x0=100
   line_y0=115
   line_x1=115
   line_y1=115
+
+  accuracy = 1000
 end
  
 function _update()
-  -- press x for a random colour
   if (btnp(5)) then
     line_y0+=15
   end
 
-  if (line_x0>115) then
+  if (line_x0>115 or line_x0<90) then
   	line_x0=90
   	line_y0=115
+    accuracy -= 100
   else
-  	line_x0+=1
+  	line_x0+=.25
   	line_y0-=.75
   end
 end
- 
+
 function _draw()
   cls(1)
-  -- circfill(64,64,32,col)
   line(line_x0, line_y0, line_x1, line_y1,8)
-  -- print(line_x0)
-  -- print(line_y0)
+  print('accuracy: ' .. accuracy)
 end
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
